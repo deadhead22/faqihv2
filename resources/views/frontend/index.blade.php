@@ -3,24 +3,9 @@
 @section('title', app_name() . ' | ' . __('navs.general.home'))
 
 @section('content')
-    <div class="row mb-4">
-        <div class="col">
-            <div class="jumbotron">
-                <h1 class="display-4">Welcome to {{ app_name() }}</h1>
-                <p class="lead">Subtitle Here</p>
-                <hr class="my-4">
-                <p>Another Subtitle</p>
-                <a class="btn btn-primary btn-lg" href="#" role="button">Click me!</a>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <i class="fas fa-home"></i> @lang('navs.general.home')
-                </div>
-                <div class="card-body">
-                    @lang('strings.frontend.welcome_to', ['place' => app_name()])
-                </div>
-            </div><!--card-->
-        </div><!--col-->
+    <div class="row">
+        <h3 class='header'>Home</h3>
+        <hr>
     </div><!--row-->
 
     {{-- <div class="row mb-4">

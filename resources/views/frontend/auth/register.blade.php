@@ -3,19 +3,16 @@
 @section('title', app_name() . ' | ' . __('labels.frontend.auth.register_box_title'))
 
 @section('content')
-    <div class="row justify-content-center align-items-center">
-        <div class="col col-sm-8 align-self-center">
             <div class="card">
-                <div class="card-header">
-                    <strong>
-                        @lang('labels.frontend.auth.register_box_title')
-                    </strong>
-                </div><!--card-header-->
-
-                <div class="card-body">
+                <div class="card-content">
+                    <div class="card-title">
+                        <strong>
+                            @lang('labels.frontend.auth.register_box_title')
+                        </strong>
+                    </div><!--card-header-->
                     {{ html()->form('POST', route('frontend.auth.register.post'))->open() }}
                         <div class="row">
-                            <div class="col-12 col-md-6">
+                            <div class="col s6">
                                 <div class="form-group">
                                     {{ html()->label(__('validation.attributes.frontend.first_name'))->for('first_name') }}
 
@@ -27,7 +24,7 @@
                                 </div><!--col-->
                             </div><!--row-->
 
-                            <div class="col-12 col-md-6">
+                            <div class="col s6">
                                 <div class="form-group">
                                     {{ html()->label(__('validation.attributes.frontend.last_name'))->for('last_name') }}
 
@@ -41,7 +38,7 @@
                         </div><!--row-->
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col s12">
                                 <div class="form-group">
                                     {{ html()->label(__('validation.attributes.frontend.email'))->for('email') }}
 
@@ -55,7 +52,7 @@
                         </div><!--row-->
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col s12">
                                 <div class="form-group">
                                     {{ html()->label(__('validation.attributes.frontend.password'))->for('password') }}
 
@@ -68,7 +65,7 @@
                         </div><!--row-->
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col s12">
                                 <div class="form-group">
                                     {{ html()->label(__('validation.attributes.frontend.password_confirmation'))->for('password_confirmation') }}
 
@@ -82,7 +79,7 @@
 
                         @if(config('access.captcha.registration'))
                             <div class="row">
-                                <div class="col">
+                                <div class="col s12">
                                     @captcha
                                     {{ html()->hidden('captcha_status', 'true') }}
                                 </div><!--col-->
@@ -90,7 +87,7 @@
                         @endif
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col s12">
                                 <div class="form-group mb-0 clearfix">
                                     {{ form_submit(__('labels.frontend.auth.register_button')) }}
                                 </div><!--form-group-->
@@ -99,7 +96,7 @@
                     {{ html()->form()->close() }}
 
                     <div class="row">
-                        <div class="col">
+                        <div class="col s12">
                             <div class="text-center">
                                 {!! $socialiteLinks !!}
                             </div>
@@ -108,8 +105,6 @@
 
                 </div><!-- card-body -->
             </div><!-- card -->
-        </div><!-- col-md-8 -->
-    </div><!-- row -->
 @endsection
 
 @push('after-scripts')

@@ -3,19 +3,16 @@
 @section('title', app_name() . ' | ' . __('labels.frontend.contact.box_title'))
 
 @section('content')
-    <div class="row justify-content-center">
-        <div class="col col-sm-8 align-self-center">
-            <div class="card">
-                <div class="card-header">
-                    <strong>
-                        @lang('labels.frontend.contact.box_title')
-                    </strong>
-                </div><!--card-header-->
-
-                <div class="card-body">
+            <div class="card">            
+                <div class="card-content">
+                    <div class="card-title">
+                        <strong>
+                            @lang('labels.frontend.contact.box_title')
+                        </strong>
+                    </div><!--card-title-->
                     {{ html()->form('POST', route('frontend.contact.send'))->open() }}
                         <div class="row">
-                            <div class="col">
+                            <div class="col s12">
                                 <div class="form-group">
                                     {{ html()->label(__('validation.attributes.frontend.name'))->for('name') }}
 
@@ -30,7 +27,7 @@
                         </div><!--row-->
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col s12">
                                 <div class="form-group">
                                     {{ html()->label(__('validation.attributes.frontend.email'))->for('email') }}
 
@@ -44,7 +41,7 @@
                         </div><!--row-->
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col s12">
                                 <div class="form-group">
                                     {{ html()->label(__('validation.attributes.frontend.phone'))->for('phone') }}
 
@@ -58,12 +55,12 @@
                         </div><!--row-->
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col s12">
                                 <div class="form-group">
                                     {{ html()->label(__('validation.attributes.frontend.message'))->for('message') }}
 
                                     {{ html()->textarea('message')
-                                        ->class('form-control')
+                                        ->class('materialize-textarea')
                                         ->placeholder(__('validation.attributes.frontend.message'))
                                         ->attribute('rows', 3)
                                         ->required() }}
@@ -73,7 +70,7 @@
 
                         @if(config('access.captcha.contact'))
                             <div class="row">
-                                <div class="col">
+                                <div class="col s12">
                                     @captcha
                                     {{ html()->hidden('captcha_status', 'true') }}
                                 </div><!--col-->
@@ -81,7 +78,7 @@
                         @endif
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col s12">
                                 <div class="form-group mb-0 clearfix">
                                     {{ form_submit(__('labels.frontend.contact.button')) }}
                                 </div><!--form-group-->
@@ -90,8 +87,6 @@
                     {{ html()->form()->close() }}
                 </div><!--card-body-->
             </div><!--card-->
-        </div><!--col-->
-    </div><!--row-->
 @endsection
 
 @push('after-scripts')

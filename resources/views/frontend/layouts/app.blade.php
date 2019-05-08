@@ -25,14 +25,24 @@
     <body>
         @include('includes.partials.demo')
 
-        <div id="app">
-            @include('includes.partials.logged-in-as')
-            @include('frontend.includes.nav')
+        <div id="app" class="teal lighten-2">
+            <header>
+                @include('includes.partials.logged-in-as')
+                @include('frontend.includes.nav')
+            </header>
 
-            <div class="container">
-                @include('includes.partials.messages')
-                @yield('content')
-            </div><!-- container -->
+            <main>
+                <div class="container">
+                    @include('includes.partials.messages')
+                    @yield('content')
+                </div><!-- container -->
+            </main>
+
+            <footer class='page-footer teal darken-2'>
+                <div class='container'>
+                    © 2019 R Creative. All rights reserved.
+                </div><!-- container -->
+            </footer>
         </div><!-- #app -->
 
         <!-- Scripts -->
