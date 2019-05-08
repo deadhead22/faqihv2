@@ -5,6 +5,13 @@
 @section('content')
     <div class="row mb-4">
         <div class="col">
+            <div class="jumbotron">
+                <h1 class="display-4">Welcome to {{ app_name() }}</h1>
+                <p class="lead">Subtitle Here</p>
+                <hr class="my-4">
+                <p>Another Subtitle</p>
+                <a class="btn btn-primary btn-lg" href="#" role="button">Click me!</a>
+            </div>
             <div class="card">
                 <div class="card-header">
                     <i class="fas fa-home"></i> @lang('navs.general.home')
@@ -16,13 +23,13 @@
         </div><!--col-->
     </div><!--row-->
 
-    <div class="row mb-4">
+    {{-- <div class="row mb-4">
         <div class="col">
             <example-component></example-component>
         </div><!--col-->
-    </div><!--row-->
+    </div><!--row--> --}}
 
-    <div class="row">
+    {{-- <div class="row">
         <div class="col">
             <div class="card">
                 <div class="card-header">
@@ -36,5 +43,5 @@
                 </div><!--card-body-->
             </div><!--card-->
         </div><!--col-->
-    </div><!--row-->
+    </div><!--row--> --}}
 @endsection
