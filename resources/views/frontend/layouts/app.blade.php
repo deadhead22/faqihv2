@@ -22,7 +22,7 @@
 
         @stack('after-styles')
     </head>
-    <body>
+    <body style="display: flex !important; min-height: 100vh !important;flex-direction: column !important;">
         @include('includes.partials.demo')
 
         <div id="app" class="teal lighten-2">
@@ -31,7 +31,7 @@
                 @include('frontend.includes.nav')
             </header>
 
-            <main>
+            <main style="flex: 1 0 auto !important;">
                 <div class="container">
                     @include('includes.partials.messages')
                     @yield('content')

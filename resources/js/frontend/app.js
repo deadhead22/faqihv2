@@ -7,6 +7,9 @@
 
 import '../bootstrap';
 import '../plugins';
+
+require('materialize-sass');
+
 import Vue from 'vue';
 
 window.Vue = Vue;
