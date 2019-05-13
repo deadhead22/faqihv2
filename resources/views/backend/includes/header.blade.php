@@ -2,10 +2,10 @@
     <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">
-        <img class="navbar-brand-full" src="{{ asset('img/backend/brand/logo.svg') }}" width="89" height="25" alt="CoreUI Logo">
-        <img class="navbar-brand-minimized" src="{{ asset('img/backend/brand/sygnet.svg') }}" width="30" height="30" alt="CoreUI Logo">
-    </a>
+    <div class="navbar-brand">
+        <div class="navbar-brand-full" width="89" height="25" alt="Logo"><strong>FAQIH</strong></div>
+        <div class="navbar-brand-minimized" width="89" height="25" alt="Logo"><strong>FQH</strong></div>
+    </div>
     <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -13,10 +13,6 @@
     <ul class="nav navbar-nav d-md-down-none">
         <li class="nav-item px-3">
             <a class="nav-link" href="{{ route('frontend.index') }}"><i class="fas fa-home"></i></a>
-        </li>
-
-        <li class="nav-item px-3">
-            <a class="nav-link" href="{{ route('admin.dashboard') }}">@lang('navs.frontend.dashboard')</a>
         </li>
 
         @if(config('locale.status') && count(config('locale.languages')) > 1)
@@ -30,20 +26,10 @@
         @endif
     </ul>
 
-    <ul class="nav navbar-nav ml-auto">
+    <ul class="nav navbar-nav ml-auto mr-4">
         <li class="nav-item d-md-down-none">
             <a class="nav-link" href="#">
                 <i class="fas fa-bell"></i>
-            </a>
-        </li>
-        <li class="nav-item d-md-down-none">
-            <a class="nav-link" href="#">
-                <i class="fas fa-list"></i>
-            </a>
-        </li>
-        <li class="nav-item d-md-down-none">
-            <a class="nav-link" href="#">
-                <i class="fas fa-map-marker-alt"></i>
             </a>
         </li>
         <li class="nav-item dropdown">
@@ -61,11 +47,4 @@
           </div>
         </li>
     </ul>
-
-    <button class="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show">
-        <span class="navbar-toggler-icon"></span>
-    </button>
 </header>

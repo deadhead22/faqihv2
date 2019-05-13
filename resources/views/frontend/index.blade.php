@@ -3,18 +3,114 @@
 @section('title', app_name() . ' | ' . __('navs.general.home'))
 
 @section('content')
-    <div class="row mb-4">
-        <div class="col">
-            <div class="card">
-                <div class="card-header">
-                    <i class="fas fa-home"></i> @lang('navs.general.home')
+    <div class="container-fluid">
+        <div class="row">
+            <div class="row justify-content-center align-items-center">
+                <div class="col col-md-12 align-self-center">
+                <h1>Temukan Potensi Anda</h1>
+                <p>Daftar Sekarang untuk menemukan Potensi Anda</p>        
+                                
+                                    <div class="">
+                                        <div class="header">
+                                            <strong>
+                                                @lang('labels.frontend.auth.register_box_title')
+                                            </strong>
+                                        </div><!--card-header-->
+
+                                        <div class="body">
+                                            {{ html()->form('POST', route('frontend.auth.register.post'))->open() }}
+                                                <div class="row">
+                                                    <div class="col-12 col-md-6">
+                                                        <div class="form-group">
+                                                            {{ html()->label(__('validation.attributes.frontend.first_name'))->for('first_name') }}
+
+                                                            {{ html()->text('first_name')
+                                                                ->class('form-control')
+                                                                ->placeholder(__('validation.attributes.frontend.first_name'))
+                                                                ->attribute('maxlength', 191)
+                                                                ->required()}}
+                                                        </div><!--col-->
+                                                    </div><!--row-->
+
+                                                    <div class="col-12 col-md-6">
+                                                        <div class="form-group">
+                                                            {{ html()->label(__('validation.attributes.frontend.last_name'))->for('last_name') }}
+
+                                                            {{ html()->text('last_name')
+                                                                ->class('form-control')
+                                                                ->placeholder(__('validation.attributes.frontend.last_name'))
+                                                                ->attribute('maxlength', 191)
+                                                                ->required() }}
+                                                        </div><!--form-group-->
+                                                    </div><!--col-->
+                                                </div><!--row-->
+
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            {{ html()->label(__('validation.attributes.frontend.email'))->for('email') }}
+
+                                                            {{ html()->email('email')
+                                                                ->class('form-control')
+                                                                ->placeholder(__('validation.attributes.frontend.email'))
+                                                                ->attribute('maxlength', 191)
+                                                                ->required() }}
+                                                        </div><!--form-group-->
+                                                    </div><!--col-->
+                                                </div><!--row-->
+
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            {{ html()->label(__('validation.attributes.frontend.password'))->for('password') }}
+
+                                                            {{ html()->password('password')
+                                                                ->class('form-control')
+                                                                ->placeholder(__('validation.attributes.frontend.password'))
+                                                                ->required() }}
+                                                        </div><!--form-group-->
+                                                    </div><!--col-->
+                                                </div><!--row-->
+
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            {{ html()->label(__('validation.attributes.frontend.password_confirmation'))->for('password_confirmation') }}
+
+                                                            {{ html()->password('password_confirmation')
+                                                                ->class('form-control')
+                                                                ->placeholder(__('validation.attributes.frontend.password_confirmation'))
+                                                                ->required() }}
+                                                        </div><!--form-group-->
+                                                    </div><!--col-->
+                                                </div><!--row-->
+
+                                                @if(config('access.captcha.registration'))
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            @captcha
+                                                            {{ html()->hidden('captcha_status', 'true') }}
+                                                        </div><!--col-->
+                                                    </div><!--row-->
+                                                @endif
+
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group mb-0 clearfix">
+                                                            {{ form_submit(__('labels.frontend.auth.register_button')) }}
+                                                        </div><!--form-group-->
+                                                    </div><!--col-->
+                                                </div><!--row-->
+                                            {{ html()->form()->close() }}
+
+                                </div><!-- card-body -->
+                            </div><!-- card -->
+                        </div><!-- col-md-8 -->
+                    </div><!-- row -->
                 </div>
-                <div class="card-body">
-                    @lang('strings.frontend.welcome_to', ['place' => app_name()])
-                </div>
-            </div><!--card-->
-        </div><!--col-->
-    </div><!--row-->
+            </div>
+        </div> 
+    </div>
 
     <div class="container">
         <div class="row mb-4">

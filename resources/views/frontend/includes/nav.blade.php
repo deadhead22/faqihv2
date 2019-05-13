@@ -46,7 +46,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuUser">
                                 <a href="{{ route('frontend.user.dashboard') }}" class='dropdown-item {{ active_class(Active::checkRoute('frontend.user.dashboard')) }}'>@lang('navs.frontend.dashboard')</a>
                                 @can('view backend')
-                                    <a href="{{ route('admin.dashboard') }}" class="dropdown-item">@lang('navs.frontend.user.administration')</a>
+                                    <a href="{{ route('admin.dashboard') }}" class="dropdown-item text-danger">@lang('navs.frontend.user.administration')</a>
                                 @endcan
                                 <a href="{{ route('frontend.user.account') }}" class="dropdown-item {{ active_class(Active::checkRoute('frontend.user.account')) }}">@lang('navs.frontend.user.account')</a>
                                 <a href="{{ route('frontend.auth.logout') }}" class="dropdown-item">@lang('navs.general.logout')</a>
