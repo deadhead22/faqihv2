@@ -1,6 +1,11 @@
 <?php
 
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\AboutController;
+use App\Http\Controllers\Frontend\AssessmentController;
+use App\Http\Controllers\Frontend\HiringController;
+use App\Http\Controllers\Frontend\TrainingController;
+use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\User\AccountController;
 use App\Http\Controllers\Frontend\User\ProfileController;
@@ -10,7 +15,24 @@ use App\Http\Controllers\Frontend\User\DashboardController;
  * Frontend Controllers
  * All route names are prefixed with 'frontend.'.
  */
+
+// Home
 Route::get('/', [HomeController::class, 'index'])->name('index');
+
+// About Us
+Route::get('aboutus', [AboutController::class, 'index'])->name('aboutus');
+
+// Assesment
+Route::get('assessment', [AssessmentController::class, 'index'])->name('assessment');
+
+// Services
+Route::get('hiring', [HiringController::class, 'index'])->name('hiring');
+Route::get('training', [TrainingController::class, 'index'])->name('training');
+
+// Blog
+Route::get('blog', [BlogController::class, 'index'])->name('blog');
+
+// Contact
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::post('contact/send', [ContactController::class, 'send'])->name('contact.send');
 

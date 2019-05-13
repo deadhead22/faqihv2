@@ -27,12 +27,20 @@
 
         <div id="app">
             @include('includes.partials.logged-in-as')
-            @include('frontend.includes.nav')
+            
+            <div class="header">
+                @include('frontend.includes.nav')
+            </div>
 
-            <div class="container">
+            <div class="container mb-3" style="margin-top: 80px">
                 @include('includes.partials.messages')
                 @yield('content')
             </div><!-- container -->
+
+            <div class="footer bg-light">
+                @include('frontend.includes.footer')
+                @include('frontend.includes.copyright')
+            </div>
         </div><!-- #app -->
 
         <!-- Scripts -->

@@ -28,6 +28,7 @@ return [
         'none' => 'Tidak ada',
         'show' => 'Tunjukkan',
         'toggle_navigation' => 'Alihkan Navigasi',
+        'copyright' => 'Copyright',
     ],
 
     'backend' => [

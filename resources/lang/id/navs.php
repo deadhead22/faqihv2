@@ -14,15 +14,20 @@ return [
 
     'general' => [
         'home' => 'Beranda',
+        'aboutus' => 'Tentang Kami',
+        'assessment' => 'Penilaian',
+        'hiring' => 'Perekrutan',
+        'training' => 'Pelatihan',
+        'blog' => 'Blog',
         'logout' => 'Keluar',
     ],
 
     'frontend' => [
         'contact' => 'Contact',
         'dashboard' => 'Dasbor',
-        'login' => 'Masuk',
+        'login' => 'Login',
         'macros' => 'Makro',
-        'register' => 'Daftar',
+        'register' => 'Register',
 
         'user' => [
             'account' => 'Akunku',
