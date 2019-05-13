@@ -62,9 +62,5 @@
     },
     "engines": {
         "node": ">=6.0.0"
-    },
-    "dependencies": {
-        "materialize-css": "^1.0.0-rc.2",
-        "materialize-sass": "^0.98.2"
     }
 }

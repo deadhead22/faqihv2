@@ -90,7 +90,7 @@ return [
     |
     */
 
-    'locale' => env('APP_LOCALE', 'id'),
+    'locale' => env('APP_LOCALE', 'en'),
 
     /*
     |--------------------------------------------------------------------------
@@ -103,7 +103,7 @@ return [
     |
     */
 
-    'fallback_locale' => env('APP_FALLBACK_LOCALE', 'id'),
+    'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
 
     /*
     |--------------------------------------------------------------------------
@@ -126,7 +126,7 @@ return [
     | by the Carbon library when setting Carbon's localization.
     |
     */
-    'locale_php' => env('APP_LOCALE_PHP', 'id_ID'),
+    'locale_php' => env('APP_LOCALE_PHP', 'en_US'),
 
     /*
     |--------------------------------------------------------------------------

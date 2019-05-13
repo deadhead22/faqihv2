@@ -2,31 +2,19 @@
     <nav class="sidebar-nav">
         <ul class="nav">
             <li class="nav-title">
-                {{-- @lang('menus.backend.sidebar.general') --}}
-                Section 1
+                @lang('menus.backend.sidebar.general')
             </li>
             <li class="nav-item">
                 <a class="nav-link {{
                     active_class(Active::checkUriPattern('admin/dashboard'))
                 }}" href="{{ route('admin.dashboard') }}">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
-                    {{-- @lang('menus.backend.sidebar.dashboard') --}}
-                    Dashboard
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{
-                    active_class(Active::checkUriPattern('admin/page'))
-                }}" href="{{ route('admin.page') }}">
-                    <i class="nav-icon fas fa-user"></i>
-                    Page 1
-                    {{-- @lang('menus.backend.sidebar.dashboard') --}}
+                    @lang('menus.backend.sidebar.dashboard')
                 </a>
             </li>
 
             <li class="nav-title">
-                {{-- @lang('menus.backend.sidebar.system') --}}
-                Section 2
+                @lang('menus.backend.sidebar.system')
             </li>
 
             @if ($logged_in_user->isAdmin())

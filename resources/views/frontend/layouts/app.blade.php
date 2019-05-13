@@ -22,27 +22,17 @@
 
         @stack('after-styles')
     </head>
-    <body style="display: flex !important; min-height: 100vh !important;flex-direction: column !important;">
+    <body>
         @include('includes.partials.demo')
 
-        <div id="app" class="teal lighten-2">
-            <header>
-                @include('includes.partials.logged-in-as')
-                @include('frontend.includes.nav')
-            </header>
+        <div id="app">
+            @include('includes.partials.logged-in-as')
+            @include('frontend.includes.nav')
 
-            <main style="flex: 1 0 auto !important;">
-                <div class="container">
-                    @include('includes.partials.messages')
-                    @yield('content')
-                </div><!-- container -->
-            </main>
-
-            <footer class='page-footer teal darken-2'>
-                <div class='container'>
-                    © 2019 R Creative. All rights reserved.
-                </div><!-- container -->
-            </footer>
+            <div class="container">
+                @include('includes.partials.messages')
+                @yield('content')
+            </div><!-- container -->
         </div><!-- #app -->
 
         <!-- Scripts -->

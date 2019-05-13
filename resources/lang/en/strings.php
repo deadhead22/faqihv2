@@ -28,15 +28,10 @@ return [
             'welcome' => 'Welcome',
         ],
 
-        'page' => [
-            'title' => 'Page',
-            'welcome' => 'Welcome',
-        ],
-
         'general' => [
             'all_rights_reserved' => 'All Rights Reserved.',
             'are_you_sure' => 'Are you sure you want to do this?',
-            'boilerplate_link' => 'RCreative',
+            'boilerplate_link' => 'Laravel 5 Boilerplate',
             'continue' => 'Continue',
             'member_since' => 'Member since',
             'minutes' => ' minutes',
@@ -68,7 +63,7 @@ return [
             'results' => 'Search Results for :query',
         ],
 
-        'welcome' => 'Welcome to R Creative',
+        'welcome' => 'Welcome to the Dashboard',
     ],
 
     'emails' => [

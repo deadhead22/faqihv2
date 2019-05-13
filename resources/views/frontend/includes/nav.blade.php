@@ -1,31 +1,35 @@
-<nav class='teal darken-2'>
-    <div class='nav-wrapper'>
-        <a href="{{ route('frontend.index') }}" class="brand-logo" style="margin-left:10px">{{ app_name() }}</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+    <a href="{{ route('frontend.index') }}" class="navbar-brand">{{ app_name() }}</a>
 
-        <ul id='nav-mobile' class="right hide-on-med-and-down">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="@lang('labels.general.toggle_navigation')">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav">
             @if(config('locale.status') && count(config('locale.languages')) > 1)
-                <li>
-                    <a href="#" id="navbarDropdownLanguageLink" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">@lang('menus.language-picker.language') ({{ strtoupper(app()->getLocale()) }})</a>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownLanguageLink" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">@lang('menus.language-picker.language') ({{ strtoupper(app()->getLocale()) }})</a>
 
                     @include('includes.partials.lang')
                 </li>
             @endif
 
             @auth
-                <li><a href="{{route('frontend.user.dashboard')}}" class="nav-link {{ active_class(Active::checkRoute('frontend.user.dashboard')) }}">@lang('navs.frontend.dashboard')</a></li>
+                <li class="nav-item"><a href="{{route('frontend.user.dashboard')}}" class="nav-link {{ active_class(Active::checkRoute('frontend.user.dashboard')) }}">@lang('navs.frontend.dashboard')</a></li>
             @endauth
 
             @guest
-                <li><a href="{{route('frontend.auth.login')}}" class="nav-link {{ active_class(Active::checkRoute('frontend.auth.login')) }}">@lang('navs.frontend.login')</a></li>
+                <li class="nav-item"><a href="{{route('frontend.auth.login')}}" class="nav-link {{ active_class(Active::checkRoute('frontend.auth.login')) }}">@lang('navs.frontend.login')</a></li>
 
                 @if(config('access.registration'))
-                    <li><a href="{{route('frontend.auth.register')}}" class="nav-link {{ active_class(Active::checkRoute('frontend.auth.register')) }}">@lang('navs.frontend.register')</a></li>
+                    <li class="nav-item"><a href="{{route('frontend.auth.register')}}" class="nav-link {{ active_class(Active::checkRoute('frontend.auth.register')) }}">@lang('navs.frontend.register')</a></li>
                 @endif
             @else
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuUser" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">{{ $logged_in_user->name }}</a>
+                       aria-haspopup="true" aria-expanded="false">{{ $logged_in_user->name }}</a>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuUser">
                         @can('view backend')
@@ -38,7 +42,7 @@
                 </li>
             @endguest
 
-            <li><a href="{{route('frontend.contact')}}" class="nav-link {{ active_class(Active::checkRoute('frontend.contact')) }}">@lang('navs.frontend.contact')</a></li>
+            <li class="nav-item"><a href="{{route('frontend.contact')}}" class="nav-link {{ active_class(Active::checkRoute('frontend.contact')) }}">@lang('navs.frontend.contact')</a></li>
         </ul>
     </div>
 </nav>

@@ -6,22 +6,8 @@
 // Bootstrap Overrides
 @import 'variables';
 
-// // Bootstrap
-// @import '~bootstrap/scss/bootstrap';
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
 
 // Pages
 @import 'pages/dashboard';
-
-// Materialize
-@import "~materialize-css/sass/materialize";
-
-
-body {
-    display: flex !important;
-    min-height: 100vh !important;
-    flex-direction: column !important;
-}
-  
-main {
-    flex: 1 0 auto !important;
-}
